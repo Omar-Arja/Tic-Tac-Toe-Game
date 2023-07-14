@@ -147,8 +147,8 @@ function reset() {
 function startGame() {
     let player1 = document.getElementById('player1').value;
     let player2 = document.getElementById('player2').value;
-    if (player1 == "") player1 = "X";
-    if (player2 == "") player2 = "O";
+    if (player1 == "") player1 = "Player X";
+    if (player2 == "") player2 = "Player O";
     landing_page.className = 'hide';
     game.className = 'show';
     player_Name_1.innerText = player1;
