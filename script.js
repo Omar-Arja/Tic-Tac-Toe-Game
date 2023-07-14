@@ -8,6 +8,10 @@ let score_1 = document.getElementById('score-1');
 let player_Name_2 = document.getElementById('player-2');
 let score_2 = document.getElementById('score-2');
 let game_over_text = document.getElementById('game-over-text');
+const click_sound_x = new Audio('assets/sounds/x-sound.wav');
+const click_sound_o = new Audio('assets/sounds/o-sound.wav');
+const win_sound = new Audio('assets/sounds/win.wav');
+const draw_sound = new Audio('assets/sounds/draw.wav');
 const continue_btn = document.getElementById('continue');
 const restart_btn = document.getElementById('restart');
 let score_x = 0;
@@ -49,11 +53,13 @@ function handleClick(e) {
     if (turn == player_x) {
         cell.innerText = 'X';
         board_state[index] = player_x;
+        click_sound_x.play();
         turn = player_o
     }
     else {
         cell.innerText = 'O';
         board_state[index] = player_o;
+        click_sound_o.play();
         turn = player_x;
     }
     setHover();
@@ -103,9 +109,11 @@ function gameOver() {
         game_over_div.classList.remove('hide');
         if (winner != null) {
             game_over_text.innerText = `${winner.innerText} Wins!`;
+            win_sound.play();
         }
         else {
             game_over_text.innerText = "It's a Draw!";
+            draw_sound.play();
         }
     }
     else {

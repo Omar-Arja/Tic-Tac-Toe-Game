@@ -223,7 +223,8 @@ h1 {
   cursor: pointer;
 }
 
-#player-1, #player-2 {
+#player-1,
+#player-2 {
   text-transform: capitalize;
 }
 
@@ -253,7 +254,7 @@ h1 {
   background-color: rgba(0, 0, 0, 0.14);
   padding: 10px;
   border-radius: 8px;
-  width:400px;
+  width: 400px;
   height: 200px;
 }
 
