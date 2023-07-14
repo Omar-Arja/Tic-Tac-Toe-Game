@@ -92,14 +92,14 @@ function checkWinner() {
             game_over = true;
             score_1.innerText = score_x;
             score_2.innerText = score_o;
-            gameOver();
+            setTimeout(gameOver, 450);
             return;
 
         }
     })
     if (!board_state.includes(null) && !game_over) {
         game_over = true;
-        gameOver();
+        setTimeout(gameOver, 360);
         winner = null;
     }
 }
